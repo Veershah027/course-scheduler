@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Course</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Edit Course</h1>
+    {% if error %}
+        <p class="error"><strong>{{ error }}</strong></p>
+    {% endif %}
+    <form method="POST">
+        <label>Course Code:</label><br>
+        <input type="text" name="code" value="{{ course.code }}" required><br><br>
+
+        <label>Course Title:</label><br>
+        <input type="text" name="title" value="{{ course.title }}" required><br><br>
+
+        <label>Days:</label><br>
+        <input type="text" name="days" value="{{ course.days }}" required><br><br>
+
+        <label>Start Time:</label><br>
+        <input type="text" name="start_time" value="{{ course.start_time }}" required><br><br>
+
+        <label>End Time:</label><br>
+        <input type="text" name="end_time" value="{{ course.end_time }}" required><br><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+    <br>
+    <a href="/">Back to My Courses</a>
+</body>
+</html>

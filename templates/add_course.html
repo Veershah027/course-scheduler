@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Course</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Add a Course</h1>
+    {% if error %}
+    <p class="error"><strong>{{ error }}</strong></p>
+    {% endif %}
+    <form method="POST">
+        <label>Course Code (e.g. CSE 205):</label><br>
+        <input type="text" name="code" required><br><br>
+
+        <label>Course Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Days (e.g. MWF or TTh):</label><br>
+        <input type="text" name="days" required><br><br>
+
+        <label>Start Time (e.g. 09:00):</label><br>
+        <input type="text" name="start_time" required><br><br>
+
+        <label>End Time (e.g. 09:50):</label><br>
+        <input type="text" name="end_time" required><br><br>
+
+        <button type="submit">Add Course</button>
+    </form>
+    <br>
+    <a href="/">Back to My Courses</a>
+</body>
+
+</html>

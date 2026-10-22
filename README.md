@@ -1,5 +1,9 @@
 # Course Scheduler & Conflict Checker
 
+![Python](https://img.shields.io/badge/python-3.x-blue?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-SQLAlchemy-000000?logo=flask&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-database-003B57?logo=sqlite&logoColor=white)
+
 A full-stack web app that lets students add their course schedule and automatically detects time conflicts between courses — built to solve a real problem I ran into registering for classes.
 
 ## Features
@@ -24,16 +28,15 @@ Each course stores its days (e.g. `MWF`, `TTh`) and start/end times. When a new 
 git clone https://github.com/Veershah027/course-scheduler.git
 cd course-scheduler
 python -m venv venv
-venv\Scripts\activate
+source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
 ```
-Then open `http://127.0.0.1:5000` in your browser.
+Then open `http://127.0.0.1:5000` in your browser. The SQLite database (`instance/scheduler.db`) is created automatically on first run.
 
 ## What I'd Add Next
 - User accounts (multiple students, separate schedules)
 - Export schedule to calendar (.ics file)
 - Visual weekly calendar grid instead of a list
-
-## Live Demo
-[link here once deployed]
+- Deploy a live demo (Render or Fly.io)
+- Unit tests for the overlap logic
